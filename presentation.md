@@ -260,7 +260,7 @@ head app/logs.txt
 **head** shows us the beginning of the file. we can specify how many lines do we want
 
 ```bash
-cat logs/app.txt | head -n 5
+cat logs/app.log | head -n 5
 ```
 
 Try it
@@ -282,7 +282,7 @@ the head commnad we already know, but specifying we want only the first 5 lines
 flipping head on the head
 
 ```bash
-cat logs/app.txt | tail -n 5
+cat logs/app.log | tail -n 5
 
 ```
 
@@ -301,7 +301,7 @@ cat logs/app.txt | tail -n 5
 
 ```bash
 
-cat logs/app.txt | head -n 15 | tail -n 5
+cat logs/app.log | head -n 15 | tail -n 5
 ```
 * So what did we get? lines 10-15
 * We pass the result from each stage as an input to the next stage
@@ -335,7 +335,7 @@ of the problem if you'll send anything else. Just a text file with the relevant 
 
 ```bash
 
-tail logs/app.txt -n 5 > email_logs.txt
+tail logs/app.log -n 5 > email_logs.txt
 
 ```
 
@@ -350,7 +350,7 @@ tail logs/app.txt -n 5 > email_logs.txt
 * That's when we use **>>**
 
 ```bash
-tail logs/app.txt -n 5 > support_template.txt
+tail logs/app.log -n 5 > support_template.txt
 ```
 
 ---
@@ -372,17 +372,93 @@ Remember: if something gone wrong, you can always reset to this step using the c
 * So how many lines does logs/app.log actually has? 
 
 ```bash
-cat logs/app.txt | wc -l
+cat logs/app.log | wc -l
 ```
 
 * And how many words? (less useful usually.. )
 
 ```bash
-cat logs/app.txt | wc -w
+cat logs/app.log | wc -w
 ```
 ---
+# We need more data
 
-# More info
+* So how many errors did we encounter in the logs? how can we know that?
+* What kind of errors?
+* Is the answer out there somewhere?
+
+---
+
+# Searching for specific text: grep
+
+* we'll use **grep** to search for lines containing certain text: the word error.
+
+```bash
+cat logs/app.log | grep error
+```
+
+---
+
+# unix philosophy: combining to get the needed data
+
+* We need to pipe the results into something that can count the number of errors.. 
+* And we can count with in bash?
+* **wc**
+
+```bash
+cat logs/app.log | grep error | wc -l
+
+```
+
+* Now we know how many errors we had
+
+---
+
+# Extra : How would we know how many ValueError ?
+
+```bash
+
+cat logs/app.log | grep ValueError | wc -l 
+```
+
+* Try what would happen if we do:
+
+```bash
+cat logs/app.log | grep valuerrror | wc -l
+```
+* Can you spot the difference?
+* Grep is sensitive to capitalization
+
+---
+
+# More grepping
+
+* We'll only had a "bite" of grep here, it has lots of variations (fgrep, egrep) and lots of options
+* man grep
+
+---
+
+# We need more data (remember?)
+
+* So how many errors did we encounter in the logs? how can we know that?
+* What kind of errors?
+* Is the answer out there somewhere?
+
+---
+# Getting organized and unique: sort & uniq
+
+* So we need to get just the **unique** error types. How can we do that?
+
+```bash
+cat logs/app.log | grep error | sort | uniq
+```
+
+* Without the sort this would be broken, unique only checks for adjacent lines 
+
+---
+
+# More info and further reading
+
 * [command line chapter in django girls tutorial](http://tutorial.djangogirls.org/en/intro_to_command_line/)
 * [The command line is your friend - youtube](https://www.youtube.com/watch?v=jvZLWhkzX-8)
 * [The shell chapter in linux journey](https://linuxjourney.com/lesson/the-shell)
@@ -393,12 +469,7 @@ cat logs/app.txt | wc -w
 
 class: center, middle
 
-#Open source rocks!
-
----
-
-class: center, middle
-
-#Thanks for listening!
+# Open source rocks!
+## Thanks for listening!
 
 ---
