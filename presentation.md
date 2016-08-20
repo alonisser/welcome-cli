@@ -4,7 +4,7 @@ class: center, middle
 
 ###A gentle introduction and Some real live examples
 
-[live presentation](http://alonisser.github.io/welcome-cli) <br/>
+[live presentation](https://alonisser.github.io/welcome-cli) <br/>
 [twitter](alonisser@twitter.com), [medium](https://medium.com/@alonisser/), 
 [Sad FrontEnd IL](http://sadfrontendil.tumblr.com/)
 #####you can also read my political blog: [דגל אדום](degeladom@wordpress.com)
