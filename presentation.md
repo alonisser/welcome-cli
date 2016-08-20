@@ -20,7 +20,7 @@ Enter to the terminal and
 
 git clone git@github.com:Tara/welcome-cli.git
 cd welcome-cli
-git fetch --tags
+git fetch --all
 git checkout -f step-0
 
 ```
@@ -234,10 +234,155 @@ rm -rf remove_me
 
 ---
 
+# Step 4
+
+## Text fu and pipe
+
+```bash
+cd ~/welcome-cli
+git checkout -f step-4
+```
+
+Remember: if something gone wrong, you can always reset to this step using the command above
+
+---
+
+# Looking at the beginning: head
+
+* It finally happened. Something really bad happened to our app and we don't have a clue.
+We need to investigate our app logs. 
+* Look at the file system now, take a look at logs/app.log .We'll try to **cat** the file 
+* Lots of info.. How can we make since of it? let's start in the beginning.
+
+```bash
+head app/logs.txt
+```
+**head** shows us the beginning of the file. we can specify how many lines do we want
+
+```bash
+cat logs/app.txt | head -n 5
+```
+
+Try it
+---
+
+# Intermezzo: The pipe | 
+
+* What just happened here? what is the strange character | in the middle?
+* This symbol is called "pipe" and is used to "pipe" data from one unix tool to another. 
+* In this example we take the result of  **cat** which is a list of lines and "pipe" it to **head -n 5** 
+the head commnad we already know, but specifying we want only the first 5 lines
+
+* We'll see more examples soon
+
+---
+
+# Looking at the end: 
+
+flipping head on the head
+
+```bash
+cat logs/app.txt | tail -n 5
+
+```
+
+---
+
+# How about in between?
+
+* We need lines 10-15 how do we get them?
+* No build in tool for that (I think.. )
+* [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) to the rescue!
+    *"Expect the output of every program to become the input to another, as yet unknown, program."*
+* how can we combine head and tail to get the lines we need?
+ 
+---
+# Combining commands with pipe
+
+```bash
+
+cat logs/app.txt | head -n 15 | tail -n 5
+```
+* So what did we get? lines 10-15
+* We pass the result from each stage as an input to the next stage
+
+---
+
+# Step 5
+
+## Redirecting
+
+```bash
+cd ~/welcome-cli
+git checkout -f step-5
+```
+
+Remember: if something gone wrong, you can always reset to this step using the command above
+
+---
+
+# redirecting stream: > and >>
+
+* And now support came back and asked you to send them the logs, but only lines 1-5 they don't care and won't take care
+of the problem if you'll send anything else. Just a text file with the relevant lines from the logs.
+
+* How can we do that? we already know how to get the 5 first lines, but how should we write it to a file?
+
+* We need to take the result "stream" from the previous command and write it into a file instead of into our terminal like we did until now.
+ in linux we call it "redirecting" 
+
+* And done like this:
+
+```bash
+
+tail logs/app.txt -n 5 > email_logs.txt
+
+```
+
+* Now please take a look at the content of email_logs.txt? win!
+
+---
+# Redirecting and appending.
+ 
+* THe current redirect command that we are using **>** is overwriting the file everytime we use it.
+* Lots of time we need to append to an existing file without overwriting
+* That's when we use **>>**
+
+---
+
+# Step 6
+
+## Text processing
+
+```bash
+cd ~/welcome-cli
+git checkout -f step-6
+```
+
+Remember: if something gone wrong, you can always reset to this step using the command above
+
+---
+# Counting with text: wc
+
+* So how many lines does logs/app.log actually has? 
+
+```bash
+cat logs/app.txt | wc -l
+```
+
+* And how many words? (less useful usually.. )
+
+```bash
+cat logs/app.txt | wc -w
+```
+---
+
 # More info
 * [command line chapter in django girls tutorial](http://tutorial.djangogirls.org/en/intro_to_command_line/)
 * [The command line is your friend - youtube](https://www.youtube.com/watch?v=jvZLWhkzX-8)
-* [The shell](https://linuxjourney.com/lesson/the-shell)
+* [The shell chapter in linux journey](https://linuxjourney.com/lesson/the-shell)
+* [The text-fu chapter in linux journey](https://linuxjourney.com/lesson/stdout-standard-out-redirect)
+* [art of the command line - more advanced](https://github.com/jlevy/the-art-of-command-line/blob/master/README.md)
 
 ---
 
