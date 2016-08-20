@@ -1,0 +1,124 @@
+error GeneralError
+ok
+ok
+ok
+error GeneralError
+ok
+error ValueError
+error GeneralError
+ok
+ok
+ok
+ok
+error GeneralError
+ok
+ok
+ok
+error GeneralError
+ok
+error ValueError
+error GeneralError
+ok
+ok
+ok
+ok
+error GeneralError
+ok
+ok
+ok
+error GeneralError
+ok
+error ValueError
+error GeneralError
+ok
+ok
+ok
+ok
+error GeneralError
+ok
+ok
+ok
+error GeneralError
+ok
+error ValueError
+error GeneralError
+ok
+ok
+ok
+ok
+error GeneralError
+ok
+ok
+ok
+error GeneralError
+ok
+error ValueError
+error GeneralError
+ok
+ok
+ok
+ok
+error GeneralError
+before : 41
+The answer: 42
+After : 43
+ok
+ok
+ok
+error GeneralError
+ok
+error ValueError
+error GeneralError
+ok
+ok
+ok
+ok
+error GeneralError
+ok
+ok
+ok
+error GeneralError
+ok
+error ValueError
+error GeneralError
+ok
+ok
+ok
+ok
+error GeneralError
+ok
+ok
+ok
+error GeneralError
+ok
+error ValueError
+error GeneralError
+ok
+ok
+ok
+ok
+error GeneralError
+ok
+ok
+ok
+error GeneralError
+ok
+error ValueError
+error GeneralError
+ok
+ok
+ok
+ok
+error GeneralError
+ok
+ok
+ok
+error GeneralError
+ok
+error ValueError
+error GeneralError
+ok
+ok
+ok
+ok
+Kaboom, all broken, But why?
