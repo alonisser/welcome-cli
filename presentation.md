@@ -346,7 +346,12 @@ tail logs/app.txt -n 5 > email_logs.txt
  
 * THe current redirect command that we are using **>** is overwriting the file everytime we use it.
 * Lots of time we need to append to an existing file without overwriting
+* For example when the motherf**rs from support sent us this template we must use with a specific encoded header.
 * That's when we use **>>**
+
+```bash
+tail logs/app.txt -n 5 > support_template.txt
+```
 
 ---
 
