@@ -162,7 +162,7 @@ One way to do this is using the ```$(command_output_here)``` syntax
 
 Lets try changing the ```socool.txt``` file to our username:
 
-```basg
+```bash
 mv socool.txt $(whoami).txt
 ```
 
@@ -170,6 +170,65 @@ try **ls** to examine the results! woo-hoo!
 
 ---
 
+class: center, middle
+# Step 3
+
+```bash
+cd ~/welcome-cli
+git checkout -f step-3
+```
+
+Remember: if something gone wrong, you can always reset to this step using the command above
+
+---
+
+# Creating folders: mkdir
+
+inside practice folder we would now create a new folder. named temp
+```bash
+cd practice && mkdir temp
+```
+
+Notice We can chain two commands together with **&&** syntax.
+
+Check what happened in the folder? You just gave life to a new folder
+
+---
+
+# Removing folders: rmdir (well sorta)
+
+Oh. now they want us to remove temp folder. about time. How would we do that?
+
+```bash
+rmdir temp
+```
+
+You just killed an innocent young folder.
+
+---
+
+# Removing folder: when rmdir isn't enough
+
+* Look there is another folder inside practice. fast! what his name?
+* Ok, please remove it.
+
+* OH OH That didn't turn out so well.
+
+* Can you guess why?
+
+---
+
+# Removing folders with content: rm -rf
+
+* Check what remove_me folder contains with **ls** (Always a good idea before deleting)
+* You can't remove a folder with content, should be empty.. unless... rm -rf to the rescue
+
+```bash
+
+rm -rf remove_me
+```
+
+* mission accomplished
 
 # More info
 * [command line chapter in django girls tutorial](http://tutorial.djangogirls.org/en/intro_to_command_line/)
