@@ -456,6 +456,10 @@ cat logs/app.log | grep error | sort | uniq
 * Without the sort this would be broken, unique only checks for adjacent lines 
 
 ---
+# We only scratched the surface of this subject.
+Lots we didn't get into including:
+curl, cut, join, sed, aws, bash scripting, chmod, chown and more.. 
+---
 
 # More info and further reading
 
