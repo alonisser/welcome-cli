@@ -60,7 +60,9 @@ Echo "Hello world"
 What did you get?
 
 Looks pretty harmless
+
 ---
+
 # Looking inside a text file: cat
 
 ```bash
@@ -70,15 +72,16 @@ cat hello.txt
 What did you get?
 
 ---
+
 # Navigating in folders: cd
 
-To move inside a folder we use the ```cd``` command
+To move inside a folder we use the **cd** command
 
 ```bash
 cd practice
 ```
 
-Go ahead and try
+Go ahead and try.
 
 ---
 
@@ -87,7 +90,7 @@ Go ahead and try
 But what is there in this new and exciting folder?
 We can use the ls command to look around and see what we got here:
  
- ```bash
+```bash
 ls
 ``` 
 
@@ -97,9 +100,9 @@ Type the ls command: what did you get?
 
 # practice for step 1
 
-Display the content of the inside.txt file
+Display the content of the *inside.txt* file
 
-clue: use the ```cat``` command
+clue: use the **cat** command
 
 ---
 
@@ -117,14 +120,14 @@ Remember: if something gone wrong, you can always reset to this step using the c
 
 # Removing stuff: rm
 
-We can remove a file using the ```rm``` command
+We can remove a file using the **rm** command
 Go into the practice folder and try to remove the remove.txt file
 
 ```bash
 rm remove.txt
 ```
 
-Now verify with ```ls``` if it's still there.
+Now verify with **ls** if it's still there.
 
 ---
 # Extra
@@ -134,14 +137,16 @@ Go ahead Play around with rm, trying removing a file that does not exist. what w
 ---
 # Renaming and moving stuff around: mv
 
-We use the ```mv``` command to move files. in linux, moving and renaming are actually the same.
+We use the **mv** command to move files. in linux, moving and renaming are actually the same.
 
 Lets try renaming the "changeme.txt" file as ```socool.txt```
 ````bash
 mv changeme.txt socool.txt
 ```
-Try ```ls``` to check what happened!
+Try **ls** to check what happened!
+
 ---
+
 # Who am I? a quick answer for an ancient question: whoami
 
 ```bash
@@ -161,7 +166,7 @@ Lets try changing the ```socool.txt``` file to our username:
 mv socool.txt $(whoami).txt
 ```
 
-try ```ls``` to examine the results! woo-hoo!
+try **ls** to examine the results! woo-hoo!
 
 ---
 
