@@ -155,12 +155,13 @@ whoami
 Surprise! it echoed your username to the terminal
 
 ---
+
 # Extra: basic variables in bash
 
 We can use output from commands in other comamnds. 
-One way to do this is using the ```$(command_output_here)``` syntax
+One way to do this is using the **$(command_output_here)** syntax
 
-Lets try changing the ```socool.txt``` file to our username:
+Lets try changing the **socool.txt** file to our username:
 
 ```bash
 mv socool.txt $(whoami).txt
@@ -171,6 +172,7 @@ try **ls** to examine the results! woo-hoo!
 ---
 
 class: center, middle
+
 # Step 3
 
 ```bash
@@ -229,6 +231,8 @@ rm -rf remove_me
 ```
 
 * mission accomplished
+
+---
 
 # More info
 * [command line chapter in django girls tutorial](http://tutorial.djangogirls.org/en/intro_to_command_line/)
