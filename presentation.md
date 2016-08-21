@@ -255,7 +255,7 @@ We need to investigate our app logs.
 * Lots of info.. How can we make since of it? let's start in the beginning.
 
 ```bash
-head app/logs.txt
+head logs/app.log
 ```
 **head** shows us the beginning of the file. we can specify how many lines do we want
 
@@ -326,6 +326,8 @@ Remember: if something gone wrong, you can always reset to this step using the c
 * And now support came back and asked you to send them the logs, but only lines 1-5 they don't care and won't take care
 of the problem if you'll send anything else. Just a text file with the relevant lines from the logs.
 
+* in logs folder you can find the  email_logs.txt support provided template.
+
 * How can we do that? we already know how to get the 5 first lines, but how should we write it to a file?
 
 * We need to take the result "stream" from the previous command and write it into a file instead of into our terminal like we did until now.
@@ -335,7 +337,7 @@ of the problem if you'll send anything else. Just a text file with the relevant 
 
 ```bash
 
-tail logs/app.log -n 5 > email_logs.txt
+head logs/app.log -n 5 > logs/email_logs.txt
 
 ```
 
@@ -424,7 +426,7 @@ cat logs/app.log | grep ValueError | wc -l
 * Try what would happen if we do:
 
 ```bash
-cat logs/app.log | grep valuerrror | wc -l
+cat logs/app.log | grep valuerror | wc -l
 ```
 * Can you spot the difference?
 * Grep is sensitive to capitalization
