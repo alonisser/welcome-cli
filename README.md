@@ -9,7 +9,9 @@ You need either:
 
 * Linux sub system on windows 10
 
-* Install git bash on windows 
+* Install [git bash](https://gitforwindows.org/) on windows
+
+If you don't have access to those you can use [replit](https://repl.it/@alonisser/welcome-cli#.replit)
 
 ## Start
 
