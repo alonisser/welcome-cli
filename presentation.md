@@ -458,9 +458,53 @@ cat logs/app.log | grep error | sort | uniq
 * Without the sort this would be broken, unique only checks for adjacent lines 
 
 ---
+# Picking specific fields
+
+But we don't need the whole line , we need just the Exception
+
+awk to the rescue
+
+```bash
+cat logs/app.log | grep error | sort | uniq | awk '{print $2}'
+```
+
+awk parses a line to fields , and allows us to extract data with a simple set of commands
+ 
+--- 
+# Consider we want to save this result
+how can we do it? 
+--
+
+```bash
+cat logs/app.log | grep error | sort | uniq | awk '{print $2}' > result.txt
+```
+
+---
+# Step 7
+
+## Text stream processing
+
+```bash
+cd ~/welcome-cli
+git checkout -f step-7
+```
+---
+# Consider we have this template. take a look
+
+```bash
+cat config.tpl
+```
+We have a place holder we need to replace - perhaps when building the container or deploying
+
+How can we do it? 
+---
+# Enter: sed
+
+
+---
 # We only scratched the surface of this subject.
 Lots we didn't get into including:
-curl, cut, join, sed, aws, bash scripting, chmod, chown and more.. 
+curl, cut, join, bash scripting, chmod, chown and more.. 
 ---
 
 # More info and further reading
@@ -470,7 +514,7 @@ curl, cut, join, sed, aws, bash scripting, chmod, chown and more..
 * [The shell chapter in linux journey](https://linuxjourney.com/lesson/the-shell)
 * [The text-fu chapter in linux journey](https://linuxjourney.com/lesson/stdout-standard-out-redirect)
 * [art of the command line - more advanced](https://github.com/jlevy/the-art-of-command-line/blob/master/README.md)
-
+* [Geeks for geeks awk](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/?ref=lbp)
 ---
 
 class: center, middle
