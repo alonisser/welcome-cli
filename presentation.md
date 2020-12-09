@@ -97,7 +97,28 @@ ls
 Type the ls command: what did you get?
 
 ---
+# command modifiers and flags
 
+Most shell commands have multiple flags modifying the behavior
+```bash
+ls --help
+```
+
+---
+# command modifiers and flags
+Try some flags and try to understand what changed
+```bash
+ls -l
+ls -a
+ls -h
+```
+--
+We can also combine flags
+
+```bash
+ls -alht #list all files in a list ordered by time with humane readable size
+```
+---
 # practice for step 1
 
 Display the content of the *inside.txt* file
@@ -468,9 +489,10 @@ awk to the rescue
 cat logs/app.log | grep error | sort | uniq | awk '{print $2}'
 ```
 
-awk parses a line to fields , and allows us to extract data with a simple set of commands
+awk parses a line to fields, and allows us to extract data with a simple set of commands.
  
---- 
+---
+
 # Consider we want to save this result
 how can we do it? 
 --
@@ -492,7 +514,7 @@ git checkout -f step-7
 # Consider we have this template. take a look
 
 ```bash
-cat config.tpl
+cat config.tpl.ini
 ```
 We have a place holder we need to replace - perhaps when building the container or deploying
 
@@ -500,6 +522,16 @@ How can we do it?
 ---
 # Enter: sed
 
+```bash
+export CONNECTION_URI="host:port@whereami" # set a variable in bash (one way)
+sed s/MYSQL_CONNECTION_URI/"${CONNECTION_URI}"/ config.tpl.ini
+```
+What happened here? can you spot what changed?
+
+---
+# Enter: sed
+
+What would be the command the save the result to config.ini? 
 
 ---
 # We only scratched the surface of this subject.
@@ -515,6 +547,7 @@ curl, cut, join, bash scripting, chmod, chown and more..
 * [The text-fu chapter in linux journey](https://linuxjourney.com/lesson/stdout-standard-out-redirect)
 * [art of the command line - more advanced](https://github.com/jlevy/the-art-of-command-line/blob/master/README.md)
 * [Geeks for geeks awk](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/?ref=lbp)
+* [Geeks for geeks sed](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/?ref=lbp)
 ---
 
 class: center, middle
